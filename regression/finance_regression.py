@@ -15,7 +15,7 @@
 
 import sys
 import pickle
-sys.path.append("../tools/")
+sys.path.append("D:/Machine Learning/tools/")
 from feature_format import featureFormat, targetFeatureSplit
 dictionary = pickle.load( open("../final_project/final_project_dataset_modified.pkl", "r") )
 

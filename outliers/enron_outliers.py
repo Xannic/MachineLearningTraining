@@ -3,7 +3,7 @@
 import pickle
 import sys
 import matplotlib.pyplot
-sys.path.append("../tools/")
+sys.path.append("D:/Machine Learning/tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
 

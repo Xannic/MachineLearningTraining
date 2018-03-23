@@ -5,7 +5,7 @@ import pickle
 import re
 import sys
 
-sys.path.append( "../tools/" )
+sys.path.append( "D:/Machine Learning/tools/" )
 from parse_out_email_text import parseOutText
 
 """
