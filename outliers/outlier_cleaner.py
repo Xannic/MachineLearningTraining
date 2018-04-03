@@ -13,8 +13,11 @@ def outlierCleaner(predictions, ages, net_worths):
     
     cleaned_data = []
 
-    ### your code goes here
+    ### this is where we modify our data
+    for pred, a, net_w in zip(predictions, ages, net_worths):
+        cleaned_data.append((a, net_w, pred - net_w))
 
-    
-    return cleaned_data
+    cleaned_data.sort(key=lambda i: i[2]) # Sort the data by the 2nd index (third element, which is the error)
+
+    return cleaned_data[:81]
 
