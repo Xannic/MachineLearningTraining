@@ -15,35 +15,40 @@ def parseOutText(f):
         text = parseOutText(f)
         
         """
-
-
+    
+    stemmer = SnowballStemmer("english")
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
 
     ### split off metadata
     content = all_text.split("X-FileName:")
-    words = ""
+    words = []
+    stemmedWords = ""
     if len(content) > 1:
         ### remove punctuation
         text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
 
         ### project part 2: comment out the line below
-        words = text_string
+        # words = text_string
 
         ### split the text string into individual words, stem each word,
         ### and append the stemmed word to words (make sure there's a single
         ### space between each stemmed word)
         
+        words = text_string.split()
+
+    # for each word in the line:
+        for word in words:
+            stemmedWords += stemmer.stem(word) + " "
 
 
 
-
-    return words
+    return stemmedWords
 
     
 
 def main():
-    ff = open("../text_learning/test_email.txt", "r")
+    ff = open("D:/Machine Learning/text_learning/test_email.txt", "r")
     text = parseOutText(ff)
     print text
 
